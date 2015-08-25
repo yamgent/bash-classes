@@ -33,8 +33,11 @@ A "substitution" is any of the above ways to recall a previous command/parameter
 	* `<substitution>:t` - The "tail" of the string, ie., the filename in a path
 		* Example: `!cat:t`
 	* `<substitution>:h` - The "head" of the string, ie., the path minus the filename
-	* `<substitution>:q` - Surround the substitution with single quotes
-	* `<substitution>:x` - Split the substitution on spaces/newlines and then surround those with quotes
+	* (Niche) `<substitution>:q` - Surround the substitution with single quotes
+	* (Niche) `<substitution>:x` - Split the substitution on spaces/newlines and then surround those with quotes
+	* `<substitution>:p` - Prints out the command WITHOUT executing it
+				(useful for putting to history without running it,
+				or just to see what we are doing)
 	* **Example**:
 
     > cat /foo/bar /baz/quz
@@ -50,3 +53,6 @@ All of these you can set in your .bashrc with `export <setting>=<value>`
 		* `ignorespace` - Don't put the command in your history if there is leading whitespace. Useful
 			if you want to run some commands without having them be in the bare history file
 		* `ignoreboth` - Both of the previous settings
+	* `HISTIGNORE` (string):(string):... - Don't put any commands listed here to the history.
+		* e.g. HISTIGNORE clear - ignore clear
+		* e.g. HISTIGNORE clear:history - ignore clear and history

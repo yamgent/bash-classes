@@ -1,5 +1,6 @@
 1. Overview of BASH history
 	* `history`
+		* `-c` - Clears history
 
 2. Basic History Recall
 	* `!!` - Previous command
